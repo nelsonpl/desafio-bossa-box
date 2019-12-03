@@ -1,4 +1,4 @@
-# Desafio Boosa Box Dev. Back-End
+# Desafio Bossa Box Dev. Back-End
 
 ![](https://img.shields.io/badge/node-success-brightgreen.svg)
 ![](https://img.shields.io/badge/test-success-brightgreen.svg)
