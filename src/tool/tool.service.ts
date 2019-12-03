@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Tool } from './tool.interface';
-import { cornflowerblue } from 'color-name';
+import { ToolDto } from './tool.dto';
 
 @Injectable()
 export class ToolService {
@@ -16,7 +16,7 @@ export class ToolService {
         return await this.model.find().exec();
     }
 
-    async create(tool: Tool): Promise<Tool> {
+    async create(tool: ToolDto): Promise<Tool> {
         return await this.model.create(tool);
     }
 

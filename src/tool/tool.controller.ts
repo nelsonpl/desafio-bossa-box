@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Query, Post, Body, Delete } from '@nestjs/common';
 import { ToolService } from './tool.service';
 import { Tool } from './tool.interface';
+import { ToolDto } from './tool.dto';
 
 @Controller('tool')
 export class ToolController {
@@ -12,7 +13,7 @@ export class ToolController {
     }
 
     @Post()
-    async create(@Body() tool: Tool): Promise<Tool> {
+    async create(@Body() tool: ToolDto): Promise<Tool> {
         return this.service.create(tool);
     }
 
