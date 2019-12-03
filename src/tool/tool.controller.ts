@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Query, Post, Body, Delete } from '@nestjs/common';
 import { ToolService } from './tool.service';
 import { Tool } from './tool.interface';
 
@@ -7,7 +7,17 @@ export class ToolController {
     constructor(private readonly service: ToolService) { }
 
     @Get()
-    async findAll(): Promise<Tool[]> {
-        return this.service.findAll();
+    async findAll(@Query('tag') tag: string): Promise<Tool[]> {
+        return this.service.findAll(tag);
+    }
+
+    @Post()
+    async create(@Body() tool: Tool): Promise<Tool> {
+        return this.service.create(tool);
+    }
+
+    @Delete(':id')
+    async delete(@Param('id') id: string) {
+        this.service.delete(id);
     }
 }
