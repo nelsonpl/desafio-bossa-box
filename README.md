@@ -1,4 +1,4 @@
-# Desafio Bossa Box Dev. Back-End
+# Desafio BossaBox Dev. Back-End
 
 ![](https://img.shields.io/badge/node-success-brightgreen.svg)
 ![](https://img.shields.io/badge/test-success-brightgreen.svg)
@@ -7,6 +7,7 @@
 
 ![](https://img.shields.io/badge/node_12-✓-blue.svg)
 ![](https://img.shields.io/badge/express-✓-blue.svg)
+![](https://img.shields.io/badge//@nestjs-✓-blue.svg)
 
 # File structure
 
@@ -16,54 +17,53 @@ api/
 ├── src/
 │   ├── controllers/
 │   │   ├── ...
-│
-├── config/
-│   ├── env/
-│   │   ├── ...
 │   │
-│   ├── ...
-│
+├── test/
+│   ├── app.e2e-spec.ts
+│   ├── jest-2e2.json
+│   │
 ├── .gitignore                    * Example git ignore file
-├── index.js                      * Entry point of our Node's app
-├── LICENSE                       * MIT License
+├── .prettierrc                   * 
+├── nest-cli.json                 * 
 ├── package.json                  * Defines our JavaScript dependencies
-├── package-lock.json             * Defines our exact JavaScript dependencies tree
-└── README.md                     * This file
+├── README.md                     * This file
+├── tsconfig.build.json           * 
+├── tsconfig.json                 * 
+├── tslint.json                   * 
+├── yarn.lock                     *  
 ```
 
-# Introduction (https://jwt.io)
+## Installation
 
-I have a great introduction to JWT in one of my other repositories, click [here](https://github.com/murraco/spring-boot-jwt#introduction-httpsjwtio) to take a look!
-
-## How to use this code?
-
-1.  Install NPM dependencies
-
-```
+```bash
 $ npm install
 ```
 
-2.  Run the project
+## Running the app
 
-```
-$ node index.js
-```
+```bash
+# development
+$ npm run start
 
-3.  Or use `nodemon` for live-reload
+# watch mode
+$ npm run start:dev
 
-```
-$ npm start
-```
-
-> `npm start` will run `nodemon index.js`.
-
-4.  Navigate to `http://localhost:3000/` in your browser to check you're seing the following response
-
-```javascript
-{ "status": "ok" }
+# production mode
+$ npm run start:prod
 ```
 
-> The port can be changed by the setting the environment variable `PORT`
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
 
 # Contribution
 
