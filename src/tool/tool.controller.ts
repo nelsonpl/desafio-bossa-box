@@ -9,7 +9,8 @@ export class ToolController {
 
     @Get()
     async findAll(@Query('tag') tag: string): Promise<Tool[]> {
-        return this.service.findAll(tag);
+        const lista = this.service.findAll(tag);
+        return lista;
     }
 
     @Post()

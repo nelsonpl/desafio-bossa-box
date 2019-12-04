@@ -9,10 +9,17 @@ describe('Tool Controller', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [ToolController],
-      providers: [ToolService,
+      providers: [
         {
-          provide: getModelToken('Tool'),
-          useValue: [],
+          provide: ToolService,
+          useFactory: () => ({
+            findAll: jest.fn(() => [{
+              title: 'String',
+              link: 'String',
+              description: 'String',
+              tags: ['String']
+            }]),
+          }),
         },]
     }).compile();
 
@@ -21,5 +28,17 @@ describe('Tool Controller', () => {
 
   it('should be defined', () => {
     expect(controller).toBeDefined();
+  });
+
+  it('should return an array of cats', async () => {
+    const result = [{
+      title: 'String',
+      link: 'String',
+      description: 'String',
+      tags: ['String']
+    }];
+    // jest.spyOn(controller, 'findAll').mockImplementation(() => result);
+
+    expect(await controller.findAll('')).toStrictEqual(result);
   });
 });
