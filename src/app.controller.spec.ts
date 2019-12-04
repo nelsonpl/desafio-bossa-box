@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Desafio BossaBox - Dev. Back-End"', () => {
-      expect(appController.getHello()).toBe('Desafio BossaBox - Dev. Back-End');
+    it('should return "Desafio BossaBox - Dev. Back-End - 1.0.0"', () => {
+      expect(appController.getHello()).toBe('Desafio BossaBox - Dev. Back-End - 1.0.0');
     });
   });
 });
