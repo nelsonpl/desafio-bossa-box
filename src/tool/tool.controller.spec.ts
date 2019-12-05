@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ToolController } from './tool.controller';
 import { ToolService } from './tool.service';
-import { getModelToken } from '@nestjs/mongoose';
+import { ToolServiceFactory, ToolMock } from './tool.service.factory';
 
 describe('Tool Controller', () => {
   let controller: ToolController;
@@ -12,14 +12,7 @@ describe('Tool Controller', () => {
       providers: [
         {
           provide: ToolService,
-          useFactory: () => ({
-            findAll: jest.fn(() => [{
-              title: 'String',
-              link: 'String',
-              description: 'String',
-              tags: ['String']
-            }]),
-          }),
+          useClass: ToolServiceFactory,
         },]
     }).compile();
 
@@ -30,15 +23,11 @@ describe('Tool Controller', () => {
     expect(controller).toBeDefined();
   });
 
-  it('should return an array of cats', async () => {
-    const result = [{
-      title: 'String',
-      link: 'String',
-      description: 'String',
-      tags: ['String']
-    }];
-    // jest.spyOn(controller, 'findAll').mockImplementation(() => result);
+  it('testando buscando todas ferramentas...', async () => {
+    expect(await controller.findAll('')).toStrictEqual(ToolMock);
+  });
 
-    expect(await controller.findAll('')).toStrictEqual(result);
+  it('testando filtro por tag...', async () => {
+    expect(await controller.findAll('tag')).toStrictEqual(ToolMock[0]);
   });
 });

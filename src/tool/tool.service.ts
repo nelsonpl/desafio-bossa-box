@@ -9,7 +9,7 @@ export class ToolService {
 
     constructor(@InjectModel('Tool') private readonly model: Model<Tool>) { }
 
-    async findAll(tag: string): Promise<Tool[]> {
+    async findAll(tag?: string): Promise<Tool[]> {
         if (tag)
             return await this.model.find({ tags: tag }).exec();
 
