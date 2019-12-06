@@ -1,7 +1,7 @@
 import { Schema, Document } from 'mongoose';
 
 export const UserSchema = new Schema<User>({
-    username: String,
+    username: { type: String, lowercase: true, trim: true },
     password: String
 });
 

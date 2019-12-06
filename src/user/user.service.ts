@@ -9,10 +9,10 @@ export class UserService {
   constructor(@InjectModel('User') private readonly model: Model<User>) { }
 
   async findOne(username: string): Promise<User> {
-    return await this.model.findOne({ username: username });
+    return await this.model.findOne({ username: username.trim().toLowerCase() });
   }
 
   async create(username: string, pass: string): Promise<User> {
-    return await this.model.create({ username: username, password: pass });
+    return await this.model.create({ username: username.trim().toLowerCase(), password: pass });
   }
 }
