@@ -1,5 +1,6 @@
 export const environment = {
     production: true,
-    dataBaseUrl: 'mongodb+srv://super:emanuel19@cluster-dev-4lrrh.mongodb.net/test?retryWrites=true&w=majority'
+    dataBaseUrl: process.env.DESAFIO_BOSSABOX_DATABASE_URL,
+    secret: process.env.DESAFIO_BOSSABOX_SECRET,
 	
 };

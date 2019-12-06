@@ -14,21 +14,18 @@ export class AuthService {
 
         if (user) {
             if (user.password === pass) {
-                const { password, ...result } = user;
-                return result;
+                return user;
             }
         }
         else {
-            const userNew = await this.userService.create(username, pass);
-            const { password, ...result } = userNew;
-            return result;
+            return await this.userService.create(username, pass);
         }
-        
+
         return null;
     }
 
     async login(user: any) {
-        const payload = { username: user.username, sub: user.userId };
+        const payload = { username: user.username, sub: user.id };
         return {
             access_token: this.jwtService.sign(payload),
         };
