@@ -1,7 +1,6 @@
 import { Controller, Get, Param, Query, Post, Body, Delete } from '@nestjs/common';
 import { ToolService } from './tool.service';
-import { Tool } from './tool.interface';
-import { ToolDto } from './tool.dto';
+import { Tool, ToolDto } from './tool.model';
 
 @Controller('tool')
 export class ToolController {

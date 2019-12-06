@@ -1,4 +1,19 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { Schema, Document } from 'mongoose';
+import { ApiProperty } from '@nestjs/swagger';
+
+export const ToolSchema = new Schema<Tool>({
+    title: String,
+    link: String,
+    description: String,
+    tags: [String]
+});
+
+export interface Tool extends Document {
+    title: String,
+    link: String,
+    description: String,
+    tags: [String]
+}
 
 export class ToolDto {
 
