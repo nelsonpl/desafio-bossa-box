@@ -23,11 +23,27 @@ describe('Tool Controller', () => {
     expect(controller).toBeDefined();
   });
 
-  it('testando buscando todas ferramentas...', async () => {
-    expect(await controller.findAll('')).toStrictEqual(ToolMock);
+  it('testando buscar...', async () => {
+    expect(await controller.findAll()).toStrictEqual(ToolMock);
+
   });
 
-  it('testando filtro por tag...', async () => {
-    expect(await controller.findAll('tag')).toStrictEqual(ToolMock[0]);
+  it('testando buscar por tag...', async () => {
+    const value = ToolMock[0];
+    expect(await controller.findAll('tag')).toStrictEqual(value);
+  });
+
+  it('testando buscar por tag que não existe...', async () => {
+    expect(await controller.findAll('tag-2')).toStrictEqual([]);
+  });
+
+  it('testando cadastrar...', async () => {
+    const value = ToolMock[0];
+    expect(await controller.create(value)).toStrictEqual(value);
+  });
+
+  it('testando excluir...', async () => {
+    const id = 'id';
+    expect(await controller.delete(id)).toBe(undefined);
   });
 });

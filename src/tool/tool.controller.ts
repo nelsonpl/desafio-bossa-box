@@ -9,13 +9,13 @@ export class ToolController {
     constructor(private readonly service: ToolService) { }
 
     @Get()
-    async findAll(@Query('tag') tag: string): Promise<Tool[]> {
+    async findAll(@Query('tag') tag?: string): Promise<ToolDto[]> {
         const lista = this.service.findAll(tag);
         return lista;
     }
 
     @Post()
-    async create(@Body() tool: ToolDto): Promise<Tool> {
+    async create(@Body() tool: ToolDto): Promise<ToolDto> {
         return this.service.create(tool);
     }
 
