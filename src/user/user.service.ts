@@ -15,4 +15,8 @@ export class UserService {
   async create(username: string, pass: string): Promise<User> {
     return await this.model.create({ username: username.trim().toLowerCase(), password: pass });
   }
+
+  async delete(userId: string) {
+    await this.model.deleteOne({ id: userId });
+  }
 }

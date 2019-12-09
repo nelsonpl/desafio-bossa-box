@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Injectable()
 export class AuthService {
@@ -29,5 +30,9 @@ export class AuthService {
         return {
             access_token: this.jwtService.sign(payload),
         };
+    }
+
+    async delete(user: any) {
+        await this.userService.delete(user.userId);
     }
 }

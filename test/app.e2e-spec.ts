@@ -1,6 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
+import { api } from '../src/api';
+
+let accessToken = '';
+let user = { username: "user-test", password: "user-test" };
 
 describe('AppController (e2e)', () => {
   let app;
@@ -18,14 +22,40 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect({
-        "name": "api-bossabox",
-        "version": "1.0.0",
-        "description": "API para o desafio de desenvolvedor backend para a Bossabox.",
-        "author": "nelson.npl@gmail.com",
-        "license": "MIT"
+      .expect(api);
+  });
+
+  it('/auth/login (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/auth/login')
+      .send(user)
+      .expect('Content-Type', /json/)
+      .expect(201)
+      .expect((res) => {
+        accessToken = res.body.access_token;
       });
   });
+
+  it('/profile (GET) (401)', () => {
+    return request(app.getHttpServer())
+      .get('/profile')
+      .expect(401)
+  });
+
+  it('/profile (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/profile')
+      .auth(accessToken, { type: "bearer" })
+      .expect(200)
+  });
+
+  it('/user (DEL)', () => {
+    return request(app.getHttpServer())
+      .del('/user')
+      .auth(accessToken, { type: "bearer" })
+      .expect(200)
+  });
+
 });
 
 describe('ToolController (e2e)', () => {
@@ -40,9 +70,9 @@ describe('ToolController (e2e)', () => {
     await app.init();
   });
 
-  it('/tool (GET)', () => {
+  it('/tool (GET) (401)', () => {
     return request(app.getHttpServer())
       .get('/tool')
-      .expect(200);
+      .expect(401);
   });
 });
