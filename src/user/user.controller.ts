@@ -1,15 +1,15 @@
 import { Controller, UseGuards, Request, Delete, Get } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthService } from '../auth/auth.service';
+import { UserService } from './user.service';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('user')
 export class UserController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly userService: UserService) { }
 
   @Delete()
   async delete(@Request() req) {
-    return this.authService.delete(req.user);
+    return this.userService.delete(req.user);
   }
 
   @Get()
