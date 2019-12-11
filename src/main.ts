@@ -13,6 +13,7 @@ async function bootstrap() {
     .setDescription('Aplicação para o desafio de backend da Bossabox.')
     .setVersion('1.0')
     .addTag('bossabox')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);

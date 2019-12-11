@@ -30,8 +30,4 @@ export class AuthService {
             access_token: this.jwtService.sign(payload),
         };
     }
-
-    async delete(user: any) {
-        await this.userService.delete(user.userId);
-    }
 }

@@ -10,10 +10,10 @@ export const ToolSchema = new Schema<Tool>({
 });
 
 export interface Tool extends Document {
-    title: String,
-    link: String,
-    description: String,
-    tags: [String]
+    title: string;
+    link: string;
+    description: string;
+    tags: [string];
 }
 
 export class ToolDto {
@@ -21,20 +21,20 @@ export class ToolDto {
     @ApiProperty({ example: 'Notion' })
     @IsNotEmpty()
     @MaxLength(50)
-    title: String;
+    title: string;
 
     @ApiProperty({ example: 'https://notion.so' })
     @IsNotEmpty()
     @IsUrl()
     @MaxLength(50)
-    link: String;
+    link: string;
 
     @ApiProperty({ example: 'All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.' })
     @IsNotEmpty()
     @MaxLength(500)
-    description: String;
+    description: string;
 
     @ApiProperty({ type: [String], examples: ['api', 'json', 'schema', 'node', 'github', 'rest'] })
     @MaxLength(20, { each: true })
-    tags: [String];
+    tags: [string];
 }
