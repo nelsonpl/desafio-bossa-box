@@ -4,7 +4,7 @@ Desafio proposto pela Bossabox para Desenvolvedores Back-End.
 
 [link para o desafio](https://www.notion.so/Dev-Back-End-04cfd92927a045f6914ab1e2c9002c02)
 
-
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://gitlab.com/nelsonpl/desafio-bossa-box)
 ![](https://img.shields.io/badge/node-success-brightgreen.svg)
 ![](https://img.shields.io/badge/test-success-brightgreen.svg)
 ![](https://img.shields.io/badge/build-success-brightgreen.svg)
