@@ -1,9 +1,5 @@
 # VUTTR (Very Useful Tools to Remember)
 
-Desafio proposto pela Bossabox para Desenvolvedores Back-End.
-
-[link para o desafio](https://www.notion.so/Dev-Back-End-04cfd92927a045f6914ab1e2c9002c02)
-
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://gitlab.com/nelsonpl/desafio-bossa-box)
 ![](https://img.shields.io/badge/node-success-brightgreen.svg)
 ![](https://img.shields.io/badge/test-success-brightgreen.svg)
@@ -20,7 +16,7 @@ Desafio proposto pela Bossabox para Desenvolvedores Back-End.
 ![](https://img.shields.io/badge/jest-✓-blue.svg)
 ![](https://img.shields.io/badge/supertest-✓-blue.svg)
 
-# Estrutura do projeto
+# Project
 
 ```
 api/
@@ -80,22 +76,22 @@ api/
 ├── tslint.json                  
 ```
 
-## Instalação
+## Install
 
 ```bash
 $ npm install
 ```
 
-## Configuração
+## Configs
 
-Configure as variáveis de ambiente abaixo:
+Env:
 
 ```bash
 $ DESAFIO_BOSSABOX_DATABASE_URL = MONGODB_URL
 $ DESAFIO_BOSSABOX_SECRET = PALAVRA_SECRETA_JWT
 ```
 
-## Executando o API
+## Execute
 
 ```bash
 # development
@@ -108,9 +104,9 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Acessando o API
+## API
 
-Após iniciar o API você pode navegar até `http://localhost:3000/` e conferir a resposta, como segue abaixo:
+link: `http://localhost:3000/`
 
 ```javascript
 {
@@ -122,7 +118,7 @@ Após iniciar o API você pode navegar até `http://localhost:3000/` e conferir 
 }
 ```
 
-## Executando testes
+## Tests
 
 ```bash
 # unit tests
@@ -134,9 +130,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-# Contribuição
-
-- Reporte qualquer problema
-- Abra um pull request com melhorias
-- Espalhe a palavra
