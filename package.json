@@ -1,7 +1,7 @@
 {
-  "name": "api-bossabox",
+  "name": "api",
   "version": "1.0.0",
-  "description": "API para o desafio de desenvolvedor backend para a Bossabox.",
+  "description": "API.",
   "author": "nelson.npl@gmail.com",
   "license": "MIT",
   "scripts": {

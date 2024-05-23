@@ -13,7 +13,7 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Desafio BossaBox - Dev. Back-End - 1.0.0"', () => {
+    it('should return "Nest.js API"', () => {
       expect(appController.getStatus()).toBe(api);
     });
   });

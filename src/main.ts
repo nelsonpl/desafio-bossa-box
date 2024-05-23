@@ -9,10 +9,10 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const options = new DocumentBuilder()
-    .setTitle('Desafio Bossabox')
-    .setDescription('Aplicação para o desafio de backend da Bossabox.')
+    .setTitle('Nest.js API')
+    .setDescription('Simple API.')
     .setVersion('1.0')
-    .addTag('bossabox')
+    .addTag('nest.js')
     .addBearerAuth()
     .build();
 

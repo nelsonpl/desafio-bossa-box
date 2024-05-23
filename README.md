@@ -87,8 +87,8 @@ $ npm install
 Env:
 
 ```bash
-$ DESAFIO_BOSSABOX_DATABASE_URL = MONGODB_URL
-$ DESAFIO_BOSSABOX_SECRET = PALAVRA_SECRETA_JWT
+$ DATABASE_URL = MONGODB_URL
+$ SECRET = SECRET_JWT
 ```
 
 ## Execute
@@ -110,9 +110,9 @@ link: `http://localhost:3000/`
 
 ```javascript
 {
-	"name": "api-bossabox",
+	"name": "nestjs-api",
 	"version": "1.0.0",
-	"description": "API para o desafio de desenvolvedor backend para a Bossabox.",
+	"description": "Simple api.",
 	"author":"nelson.npl@gmail.com",
 	"license":"MIT"
 }

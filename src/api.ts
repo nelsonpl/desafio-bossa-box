@@ -1,7 +1,7 @@
 export const api = {
-    name: 'api-bossabox',
+    name: 'api',
     version: '1.0.0',
-    description: 'API para o desafio de desenvolvedor backend para a Bossabox.',
+    description: 'Simple api.',
     author: 'nelson.npl@gmail.com',
     license: 'MIT',
 };
