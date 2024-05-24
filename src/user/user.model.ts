@@ -7,6 +7,6 @@ export const UserSchema = new Schema<User>({
 
 export interface User extends Document {
     id: string;
-    username: String,
-    password: String
+    username: string,
+    password: string
 };
