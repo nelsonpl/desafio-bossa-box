@@ -38,7 +38,8 @@ jobs:
 
       - name: Run tests
         env:
-          MONGO_URL: mongodb://localhost:27017/testdb
+          DATABASE_URL: mongodb://localhost:27017/testdb
+          SECRET: SECRET-TEST
         run: yarn test
 
       - name: Upload coverage to Codecov
