@@ -10,7 +10,7 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Nest.js API')
-    .setDescription('Simple API.')
+    .setDescription('Simple API Nest.js.')
     .setVersion('1.0')
     .addTag('nest.js')
     .addBearerAuth()
