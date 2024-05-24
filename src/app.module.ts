@@ -8,7 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(environment.dataBaseUrl, { useNewUrlParser: true, useUnifiedTopology: true }),
+  imports: [MongooseModule.forRoot(environment.dataBaseUrl),
     AuthModule,
     ToolModule,
     UserModule],
